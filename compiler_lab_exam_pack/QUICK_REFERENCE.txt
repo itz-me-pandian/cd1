@@ -1,0 +1,22 @@
+Compiler Lab quick reference
+============================
+
+Build:
+  cd 01_while_loop && make
+  ./compiler < sample.in
+  ./optimizer tac.txt optimized.txt
+  ./backend optimized.txt target.txt
+
+Repeat in 02_if_else or 03_simple_assignment.
+
+Question-to-file mapping:
+(a) lexer.l      -> token recognition
+(b) parser.y     -> grammar/syntax checking
+(c) parser.y     -> SDT semantic actions that emit TAC
+(d) optimizer.c  -> constant folding + conservative code-motion demonstration
+(e) backend.c    -> TAC to pseudo target instructions
+(f) Makefile     -> integrated build
+
+Note: These are exam-practice templates. The if/else grammar handles one if/else statement;
+the while grammar handles one while loop with assignment statements in its body. Nested control
+flow and full C syntax are intentionally out of scope.
